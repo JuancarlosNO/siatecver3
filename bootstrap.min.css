@@ -1,0 +1,272 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar personalizado */
+.navbar {
+  background: linear-gradient(90deg, #2c3e50, #4ca1af);
+  box-shadow: 0 2px 5px rgba(44, 62, 80, 0.3);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+/* Formulario */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: white;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+/* Formulario en grid con filas y columnas */
+.card-body form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1.2rem 1.5rem;
+  align-items: start;
+}
+
+.card-body form .form-group {
+  margin-bottom: 0; /* eliminamos margen porque usamos grid-gap */
+}
+
+/* Inputs y textarea estilo base */
+.form-control {
+  border-radius: 6px;
+  border: 1.8px solid #ced4da;
+  transition: border-color 0.3s ease;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.form-control:focus {
+  border-color: #4ca1af;
+  box-shadow: 0 0 8px rgba(76, 161, 175, 0.5);
+  outline: none;
+}
+
+/* Textarea ocupa ambas columnas */
+#descripcionProducto {
+  grid-column: 1 / span 2;
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Botón ocupa ambas columnas */
+button#submit-producto {
+  grid-column: 1 / span 2;
+  margin-top: 1rem;
+  background: #57b6c5;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.6rem;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  justify-self: stretch;
+  transition: background-color 0.3s ease;
+}
+
+button#submit-producto:hover {
+  background: #357f85;
+}
+
+/* Botones Editar y Borrar personalizados */
+.btn-warning {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-warning:hover,
+.btn-warning:focus {
+  background-color: #ec971f;
+  border-color: #d58512;
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+  background-color: #c9302c;
+  border-color: #ac2925;
+  color: #fff;
+}
+
+/* Tabla de productos */
+table {
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+thead tr {
+  background: #4ca1af;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+thead th {
+  padding: 12px 15px;
+  user-select: none;
+}
+
+tbody tr {
+  background: #fafafa;
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+tbody tr:hover {
+  background-color: #d6f0f6;
+}
+
+tbody td {
+  padding: 12px 15px;
+  vertical-align: middle;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Alertas */
+.alert {
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.7rem 1rem;
+}
+
+/* Contenedor de lista en card */
+#container-productos {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.list-group-item {
+  border-radius: 6px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.list-group-item:hover {
+  background-color: #e4f5f8;
+  cursor: pointer;
+}
+
+/* Form inline (buscador navbar) */
+.form-inline input.form-control {
+  width: 180px;
+  border-radius: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  transition: width 0.3s ease;
+}
+
+.form-inline input.form-control:focus {
+  width: 280px;
+  box-shadow: 0 0 8px rgba(76,161,175,0.6);
+}
+
+.form-inline button.btn-success {
+  background-color: #3b9d9d;
+  border: none;
+  border-radius: 25px;
+  padding: 6px 18px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.form-inline button.btn-success:hover {
+  background-color: #2e7575;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-inline input.form-control {
+    width: 100px;
+  }
+  .form-inline input.form-control:focus {
+    width: 160px;
+  }
+}
+
+/* Responsive para formulario: a una columna en móvil */
+@media (max-width: 575.98px) {
+  .card-body form {
+    grid-template-columns: 1fr;
+  }
+
+  #descripcionProducto {
+    grid-column: 1;
+  }
+
+  button#submit-producto {
+    grid-column: 1;
+  }
+}/* Botones Editar y Borrar personalizados */
+.btn-warning {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-warning:hover,
+.btn-warning:focus {
+  background-color: #ec971f;
+  border-color: #d58512;
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+  background-color: #c9302c;
+  border-color: #ac2925;
+  color: #fff;
+}
